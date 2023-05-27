@@ -100,7 +100,7 @@ const Register = () => {
           text="phone number"
           value={values.phone}
           fn={(e: any) => setValues({ ...values, phone: e.target.value })}
-          err=""
+          err={""}
         />
 
         <div className="mt-5">
