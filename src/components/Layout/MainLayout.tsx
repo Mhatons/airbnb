@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import IconNav from "./iconNav";
-import Nav from "./nav/Nav"
 import Navigation from "./nav";
+import Footer from "./footer";
 
 export default function MainLayout() {
 
@@ -20,6 +19,23 @@ export default function MainLayout() {
       setNavPos(false)
     }
   }
+
+  let lastScrollPosition = 0;
+  const footer = document.querySelector('.footer');
+
+  window.addEventListener('scroll', () => {
+    const currentScrollPosition = window.pageYOffset;
+
+    if (currentScrollPosition > lastScrollPosition) {
+      footer?.classList?.remove('show');
+    } else {
+      footer?.classList?.add('show');
+    }
+
+    lastScrollPosition = currentScrollPosition;
+  });
+
+
 
   return (
     <div className="">
@@ -38,7 +54,7 @@ export default function MainLayout() {
             <Outlet />
           </div>
           {/* Footer */}
-          <div id="footer" className="fixed bottom-0 bg-white w-full border-t">
+          <div id="footer" className="footer fixed bottom-0 bg-white z-10 w-full border-t">
             <Footer />
           </div>
         </div>

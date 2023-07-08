@@ -11,7 +11,8 @@ interface Items {
  views: string,
  date: string,
  price: number,
- rate: number
+ rate: number,
+ fn: any
 }
 
 export default function Card({
@@ -21,14 +22,12 @@ export default function Card({
  date,
  price,
  rate,
+ fn
 }: Items) {
 
  const { toggleState, toggleShow } = useAppSelector(allInfo);
  const dispatch = useAppDispatch()
 
- const handleLike = () => {
-  dispatch(setToggleState(!toggleState))
- }
 
  console.log(toggleState);
 
@@ -36,8 +35,8 @@ export default function Card({
   <div className=" bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700">
    <div className='h-[300px] relative'>
     <MySlider gallery={image} />
-    <PiHeartFill onClick={() => handleLike()} className={` cursor-pointer absolute top-4 right-4 text-2xl ${!toggleState ? "text-[#000000c4]" : "text-[#FF385C]"}`} />
-    <PiHeartDuotone onClick={() => handleLike()} className={` cursor-pointer absolute top-4 right-4 text-2xl z-10 text-white`} />
+    <PiHeartFill className={` cursor-pointer absolute top-4 right-4 text-2xl ${!toggleState ? "text-[#000000c4]" : "text-[#FF385C]"}`} />
+    <PiHeartDuotone onClick={() => fn} className={` cursor-pointer absolute top-4 right-4 text-2xl z-10 text-white`} />
    </div>
    <div className="py-3">
     <div className='flex justify-between items-center'>

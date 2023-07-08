@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../../components/card";
 import { BsToggleOn } from "react-icons/bs"
 import { GrFormCheckmark } from "react-icons/gr"
@@ -20,199 +20,219 @@ import image14 from "../../asset/bbe939d6-8991-4f7b-9d5d-52b4fdd8a583.jpg"
 import image15 from "../../asset/606157a6-ef10-4eb7-b7f4-33ac86f83823.webp"
 import image16 from "../../asset/20c47e50-644f-4a3e-9193-80d11b5b1904.jpg"
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { allInfo, setToggleShow } from "../../features/actionslice";
+import { allInfo, setToggleShow, setToggleState } from "../../features/actionslice";
 
 const Home = () => {
-  const {toggleShow} = useAppSelector(allInfo)
+  const { toggleShow, toggleState } = useAppSelector(allInfo)
   const dispatch = useAppDispatch()
+  const [cards, setCards] = useState([
+    {
+      id: 1,
+      title: "Balian Beach, Indonesia",
+      rate: 4.85,
+      views: "43,682",
+      date: "Aug 11-18",
+      price: 118,
+      liked: false,
+      image: [
+        image,
+        image2,
+        image3,
+        image4,
+        image5
+      ]
+    },
+    {
+      id: 2,
+      title: "Ubud, Indonesia",
+      rate: 4.85,
+      views: "7,382",
+      date: "Aug 18-23",
+      price: 119,
+      liked: false,
+      image: [
+        image8,
+        image7,
+        image6,
+        image9,
+        image10,
+      ]
+    },
+    {
+      id: 3,
+      title: "Balian Beach, Indonesia",
+      rate: 4.85,
+      views: "43,682",
+      date: "Aug 11-18",
+      price: 118,
+      liked: false,
+      image: [
+        image12,
+        image11,
+        image13,
+        image14,
+        image15,
+      ]
+    },
+    {
+      id: 4,
+      title: "Balian Beach, Indonesia",
+      rate: 4.85,
+      views: "43,682",
+      date: "Aug 11-18",
+      price: 118,
+      liked: false,
+      image: [
+        image3,
+        image,
+        image16,
+        image9,
+        image5,
+      ]
+    },
+    {
+      id: 5,
+      title: "Balian Beach, Indonesia",
+      rate: 4.85,
+      views: "43,682",
+      date: "Aug 11-18",
+      price: 118,
+      liked: false,
+      image: [
+        image4,
+        image14,
+        image7,
+        image3,
+        image5,
+      ]
+    },
+    {
+      id: 6,
+      title: "Balian Beach, Indonesia",
+      rate: 4.85,
+      views: "43,682",
+      date: "Aug 11-18",
+      price: 118,
+      liked: false,
+      image: [
+        image13,
+        image15,
+        image11,
+        image6,
+        image16,
+      ]
+    },
+    {
+      id: 7,
+      title: "Balian Beach, Indonesia",
+      rate: 4.85,
+      views: "43,682",
+      date: "Aug 11-18",
+      price: 118,
+      liked: false,
+      image: [
+        image,
+        image2,
+        image3,
+        image4,
+        image5
+      ]
+    },
+    {
+      id: 8,
+      title: "Ubud, Indonesia",
+      rate: 4.85,
+      views: "7,382",
+      date: "Aug 18-23",
+      price: 119,
+      liked: false,
+      image: [
+        image6,
+        image7,
+        image8,
+        image9,
+        image10,
+      ]
+    },
+    {
+      id: 9,
+      title: "Balian Beach, Indonesia",
+      rate: 4.85,
+      views: "43,682",
+      date: "Aug 11-18",
+      price: 118,
+      liked: false,
+      image: [
+        image11,
+        image12,
+        image13,
+        image14,
+        image15,
+      ]
+    },
+    {
+      id: 10,
+      title: "Balian Beach, Indonesia",
+      rate: 4.85,
+      views: "43,682",
+      date: "Aug 11-18",
+      price: 118,
+      liked: false,
+      image: [
+        image16,
+        image,
+        image3,
+        image9,
+        image5,
+      ]
+    },
+    {
+      id: 11,
+      title: "Balian Beach, Indonesia",
+      rate: 4.85,
+      views: "43,682",
+      date: "Aug 11-18",
+      price: 118,
+      liked: false,
+      image: [
+        image13,
+        image11,
+        image7,
+        image5,
+        image9,
+      ]
+    },
+    {
+      id: 12,
+      title: "Balian Beach, Indonesia",
+      rate: 4.85,
+      views: "43,682",
+      date: "Aug 11-18",
+      price: 118,
+      liked: false,
+      image: [
+        image15,
+        image16,
+        image13,
+        image,
+        image11,
+      ]
+    },
+  ])
 
-  const cardDetails = [
-    {
-     id: 1,
-     title: "Balian Beach, Indonesia",
-     rate: 4.85,
-      views: "43,682",
-     date: "Aug 11-18",
-     price: 118,
-      image: [
-          image, 
-          image2, 
-          image3, 
-          image4, 
-          image5 
-      ]
-    },
-    {
-     id: 2,
-     title: "Ubud, Indonesia",
-     rate: 4.85,
-      views: "7,382",
-     date: "Aug 18-23",
-     price: 119,
-      image: [
-          image8,
-          image7,
-          image6,
-          image9,
-          image10,
-      ]
-    },
-    {
-     id: 3,
-     title: "Balian Beach, Indonesia",
-     rate: 4.85,
-      views: "43,682",
-     date: "Aug 11-18",
-     price: 118,
-      image: [
-          image12,
-          image11,
-          image13, 
-          image14, 
-          image15, 
-      ]
-    },
-    {
-     id: 4,
-     title: "Balian Beach, Indonesia",
-     rate: 4.85,
-      views: "43,682",
-     date: "Aug 11-18",
-     price: 118,
-      image: [
-          image3,
-          image,
-          image16,
-          image9,
-          image5,
-      ]
-    },
-    {
-     id: 5,
-     title: "Balian Beach, Indonesia",
-     rate: 4.85,
-      views: "43,682",
-     date: "Aug 11-18",
-     price: 118,
-      image: [
-          image4,
-          image14,
-          image7,
-          image3,
-          image5,
-      ]
-    },
-    {
-     id: 6,
-     title: "Balian Beach, Indonesia",
-     rate: 4.85,
-      views: "43,682",
-     date: "Aug 11-18",
-     price: 118,
-      image: [
-          image13,
-          image15,
-          image11,
-          image6,
-          image16,
-      ]
-    },
-    {
-     id: 7,
-     title: "Balian Beach, Indonesia",
-     rate: 4.85,
-      views: "43,682",
-     date: "Aug 11-18",
-     price: 118,
-      image: [
-          image, 
-          image2, 
-          image3, 
-          image4, 
-          image5 
-      ]
-    },
-    {
-     id: 8,
-     title: "Ubud, Indonesia",
-     rate: 4.85,
-      views: "7,382",
-     date: "Aug 18-23",
-     price: 119,
-      image: [
-          image6,
-          image7,
-          image8,
-          image9,
-          image10,
-      ]
-    },
-    {
-     id: 9,
-     title: "Balian Beach, Indonesia",
-     rate: 4.85,
-      views: "43,682",
-     date: "Aug 11-18",
-     price: 118,
-      image: [
-          image11,
-          image12,
-          image13, 
-          image14, 
-          image15, 
-      ]
-    },
-    {
-     id: 10,
-     title: "Balian Beach, Indonesia",
-     rate: 4.85,
-      views: "43,682",
-     date: "Aug 11-18",
-     price: 118,
-      image: [
-          image16,
-          image,
-          image3,
-          image9,
-          image5,
-      ]
-    },
-    {
-     id: 11,
-     title: "Balian Beach, Indonesia",
-     rate: 4.85,
-      views: "43,682",
-     date: "Aug 11-18",
-     price: 118,
-      image: [
-          image13,
-          image11,
-          image7,
-          image5,
-          image9,
-      ]
-    },
-    {
-     id: 12,
-     title: "Balian Beach, Indonesia",
-     rate: 4.85,
-      views: "43,682",
-     date: "Aug 11-18",
-     price: 118,
-      image: [
-          image15,
-          image16,
-          image13,
-          image,
-          image11,
-      ]
-    },
-  ]
+  const handleLikeToggle = (id: number) => {
+    setCards((prevPictures) =>
+      prevPictures.map((picture) =>
+        picture.id === id ? { ...picture, liked: !picture.liked } : picture
+      )
+    );
+  }
+  
   return (
     <div className="pt-5">
       <div className="flex items-center justify-between md:w-[42%] w-[95%] border rounded-xl px-3 py-1 m-auto">
         <div className="md:flex items-center text-sm gap-4">
-          <b className="border-e pe-4">Display total price</b>
+          <b className="md:border-e pe-4">Display total price</b>
           <p className="text-zinc-500">Includes all fees, before taxes</p>
         </div>
         <div className="relative">
@@ -224,8 +244,8 @@ const Home = () => {
       </div>
       <div className="grid items-center gap-6  lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 pt-7 md:w-[90%] w-[95%] m-auto">
         {
-          cardDetails.length ? (
-            cardDetails.map((info) => (
+          cards.length ? (
+            cards.map((info) => (
               <Card
                 key={info.id}
                 title={info.title}
@@ -234,6 +254,7 @@ const Home = () => {
                 price={info.price}
                 date={info.date}
                 image={info.image}
+                fn={handleLikeToggle}
               />
             ))
           ) : null

@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdEditAttributes } from "react-icons/md"
 
-export default function Footer() {
+export default function MainFooter() {
   const listContent = [
     {
       id: 1,
