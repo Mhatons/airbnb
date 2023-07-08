@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "../../components/card";
 import { BsToggleOn } from "react-icons/bs"
 import { GrFormCheckmark } from "react-icons/gr"
@@ -19,7 +19,6 @@ import image13 from "../../asset/db91b151-be3e-4a4c-8790-ed64c0ac7698.jpeg"
 import image14 from "../../asset/bbe939d6-8991-4f7b-9d5d-52b4fdd8a583.jpg"
 import image15 from "../../asset/606157a6-ef10-4eb7-b7f4-33ac86f83823.webp"
 import image16 from "../../asset/20c47e50-644f-4a3e-9193-80d11b5b1904.jpg"
-import MySlider from "../../components/slider";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { allInfo, setToggleShow } from "../../features/actionslice";
 
