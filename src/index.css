@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  padding: 0; margin: 0;
+}
+
+.scrollBarSettings::-webkit-scrollbar {
+  display: none;
+}
+
+#iconNav{
+  transition-duration: 0.7s;
+}
+
+
 body {
 font-family: "Inter";
 -ms-user-select: none;
@@ -10,4 +23,21 @@ font-family: "Inter";
 -webkit-touch-callout: none;
 -khtml-user-select: none;
 user-select: none;
+}
+
+
+
+@media(max-width: 768px){
+ #navBar{
+  border: none;
+ }
+ .handleHide{
+  display: none;
+ }
+ #mobileNav2{
+   padding-top: 0px;
+ }
+ .mobileNav2{
+  width: 100%;
+ }
 }

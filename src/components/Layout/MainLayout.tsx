@@ -1,29 +1,44 @@
-import React from "react";
-import Nav from "./Nav";
+import React, { useState } from "react";
 import Footer from "./Footer";
-import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
+import IconNav from "./iconNav";
+import Nav from "./nav/Nav"
+import Navigation from "./nav";
 
 export default function MainLayout() {
+
+  const [navPos, setNavPos] = useState(false)
+
+
+  window.onscroll = function () { myFunction() };
+  function myFunction() {
+    if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+      setNavPos(true)
+    }
+    else {
+      // prompt("below 350")
+      setNavPos(false)
+    }
+  }
+
   return (
-    <div className="w-12/12 overflow-hidden">
-      <section className="flex justify-between m-auto">
-        {/* sideBar */}
-        <SideBar />
+    <div className="">
+      <section className="">
         {/* Nav With Content */}
-        <div id="NavWithContent" className="w-[80%] pt-3 ">
+        <div id="NavWithContent" className="pt-0 ">
           {/* navBar */}
-          <div id="navwithcontent" className="w-[90%] m-auto ">
-            <div id="navBar">
-              <Nav />
-            </div>
-            {/* main content */}
-            <div className=" max-h-[90vh] overflow-y-scroll scrollBarSettings" id="content">
-              <Outlet />
-            </div>
+          <div id="navBar" className=" border-b fixed w-full bg-white z-20 pt-3">
+            <Navigation />
+          </div>
+          <div id="iconNav" className={` ${navPos ? "transition ease-in-out delay-150 duration-300 shadow-md w-full fixed pt-20" : "pt-24"} bg-white z-10`}>
+            <IconNav />
+          </div>
+          {/* main content */}
+          <div className={`${navPos ? " pt-44":null} pb-16`} id="">
+            <Outlet />
           </div>
           {/* Footer */}
-          <div id="footer">
+          <div id="footer" className="fixed bottom-0 bg-white w-full border-t">
             <Footer />
           </div>
         </div>

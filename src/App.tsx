@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={routes(null)} />
+      <RouterProvider router={routes(user)} />
     </>
   );
 }
