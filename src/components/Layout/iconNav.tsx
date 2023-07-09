@@ -135,7 +135,7 @@ export default function IconNav() {
   <div 
      className=' flex items-center justify-between md:w-[90%] w-[99%] m-auto '>
    <div 
-       className='relative md:w-[92%]  w-[99%]'>
+       className='relative md:w-[89%] lg:w-[92%]  w-[99%]'>
        <IoIosArrowBack
          className='text-[30px] bg-white border rounded-3xl p-[6px] shadow-xl shadow-white absolute left-0 mt-5 md:block hidden'
     />
@@ -145,7 +145,7 @@ export default function IconNav() {
       icons.map((data) => {
        return (
         <div 
-        className='w-[90%] h-[60px] flex px-2 flex-col items-center gap-2 text-zinc-500 border-slate-200 hover:border-b-[3px] cursor-pointer pb-2'>
+        className='w-[90%] h-[60px] flex px-2 flex-col items-center gap-2 text-zinc-500 hover:text-zinc-700 border-slate-200 hover:border-b-[3px] cursor-pointer pb-2'>
          <div 
          className='text-[1.5em]'>
           {data.icon}
@@ -164,7 +164,7 @@ export default function IconNav() {
     />
    </div>
    <div 
-       className='md:flex hidden border p-4 rounded-xl items-center text-[12px] font-semibold gap-2'>
+       className='md:flex hidden border p-4 2xl:ms-0 ms-4 rounded-xl items-center text-[12px] font-semibold gap-2'>
     <PiSlidersHorizontal 
     className=' text-[17px]' 
     />
