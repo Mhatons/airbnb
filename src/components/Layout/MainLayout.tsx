@@ -43,10 +43,10 @@ export default function MainLayout() {
         {/* Nav With Content */}
         <div id="NavWithContent" className="pt-0 ">
           {/* navBar */}
-          <div id="navBar" className=" border-b fixed w-full bg-white z-20 pt-3">
+          <div id="navBar" className=" border-b fixed w-full bg-white z-30 pt-3">
             <Navigation />
           </div>
-          <div id="iconNav" className={` ${navPos ? "transition ease-in-out delay-150 duration-300 shadow-md w-full fixed pt-20" : "pt-24"} bg-white z-10`}>
+          <div id="iconNav" className={` ${navPos ? "transition ease-in-out delay-150 z-20 duration-300 shadow-md w-full fixed pt-20" : "pt-24"} bg-white z-10`}>
             <IconNav />
           </div>
           {/* main content */}
