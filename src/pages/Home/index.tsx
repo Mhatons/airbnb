@@ -25,7 +25,8 @@ import { allInfo, setToggleShow, setToggleState } from "../../features/actionsli
 const Home = () => {
   const { toggleShow, toggleState } = useAppSelector(allInfo)
   const dispatch = useAppDispatch()
-  const [cards, setCards] = useState([
+
+  const cards = [
     {
       id: 1,
       title: "Balian Beach, Indonesia",
@@ -33,7 +34,7 @@ const Home = () => {
       views: "43,682",
       date: "Aug 11-18",
       price: 118,
-      liked: false,
+      liked: true,
       image: [
         image,
         image2,
@@ -49,7 +50,7 @@ const Home = () => {
       views: "7,382",
       date: "Aug 18-23",
       price: 119,
-      liked: false,
+      liked: true,
       image: [
         image8,
         image7,
@@ -218,15 +219,11 @@ const Home = () => {
         image11,
       ]
     },
-  ])
+  ]
 
-  const handleLikeToggle = (id: number) => {
-    setCards((prevPictures) =>
-      prevPictures.map((picture) =>
-        picture.id === id ? { ...picture, liked: !picture.liked } : picture
-      )
-    );
-  }
+  localStorage.setItem("cards", JSON.stringify(cards))
+  let storedCards = localStorage.getItem("cards")
+  const getCards = storedCards? JSON.parse(storedCards): []
   
   return (
     <div className="pt-5">
@@ -244,8 +241,8 @@ const Home = () => {
       </div>
       <div className="grid items-center gap-6  lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 pt-7 md:w-[90%] w-[95%] m-auto">
         {
-          cards.length ? (
-            cards.map((info) => (
+          getCards.length ? (
+            getCards.map((info: any) => (
               <Card
                 key={info.id}
                 title={info.title}
@@ -254,7 +251,7 @@ const Home = () => {
                 price={info.price}
                 date={info.date}
                 image={info.image}
-                fn={handleLikeToggle}
+                id={info.id}
               />
             ))
           ) : null

@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiFillStar } from "react-icons/ai"
 import { PiHeartDuotone, PiHeartFill } from "react-icons/pi"
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { allInfo, setToggleState } from '../../features/actionslice'
+import { useAppSelector } from '../../app/hooks'
+import { allInfo } from '../../features/actionslice'
 import MySlider from '../slider'
 
 interface Items {
@@ -12,7 +12,7 @@ interface Items {
  date: string,
  price: number,
  rate: number,
- fn: any
+ id: any,
 }
 
 export default function Card({
@@ -22,21 +22,28 @@ export default function Card({
  date,
  price,
  rate,
- fn
+ id,
 }: Items) {
 
- const { toggleState, toggleShow } = useAppSelector(allInfo);
- const dispatch = useAppDispatch()
+ const { toggleShow } = useAppSelector(allInfo);
 
+ const [liked, setLiked] = useState(false);
 
- console.log(toggleState);
+ const handleLikeToggle = () => {
+  setLiked(!liked);
+ };
+
+ const cardStyle = {
+  color: liked ? 'red' : 'black',
+ };
+
 
  return (
   <div className=" bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700">
    <div className='h-[300px] relative'>
     <MySlider gallery={image} />
-    <PiHeartFill className={` cursor-pointer absolute top-4 right-4 text-2xl ${!toggleState ? "text-[#000000c4]" : "text-[#FF385C]"}`} />
-    <PiHeartDuotone onClick={() => fn} className={` cursor-pointer absolute top-4 right-4 text-2xl z-10 text-white`} />
+    <PiHeartFill style={cardStyle} className={` cursor-pointer absolute top-4 right-4 text-2xl `} />
+    <PiHeartDuotone onClick={() => handleLikeToggle()} className={` cursor-pointer absolute top-4 right-4 text-2xl z-10 text-white`} />
    </div>
    <div className="py-3">
     <div className='flex justify-between items-center'>
