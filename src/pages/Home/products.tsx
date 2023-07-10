@@ -18,6 +18,8 @@ import image14 from "../../asset/bbe939d6-8991-4f7b-9d5d-52b4fdd8a583.jpg"
 import image15 from "../../asset/606157a6-ef10-4eb7-b7f4-33ac86f83823.webp"
 import image16 from "../../asset/20c47e50-644f-4a3e-9193-80d11b5b1904.jpg"
 
+import userImg1 from "../../asset/banner.jpeg"
+
 const Products = () => {
 
  const cards = [
@@ -220,7 +222,7 @@ const Products = () => {
  const getCards = storedCards ? JSON.parse(storedCards) : []
 
  return (
-  <div className="grid items-center gap-6  lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 pt-7 md:w-[90%] w-[95%] m-auto">
+  <div id="products" className=" grid items-center gap-6 pt-7 md:w-[90%] w-[93%] m-auto">
    {
     getCards.length ? (
      getCards.map((info: any) => (
