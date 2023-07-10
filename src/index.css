@@ -25,7 +25,7 @@ font-family: "Inter";
 user-select: none;
 }
 .card:hover .userCard{
-  bottom: 1pc; transition-duration: 0.8s; transform-origin: left;
+  bottom: 1.2pc; transition-duration: 0.8s; transform-origin: left;
 }
 #products{
     grid-template-columns: repeat(4, 1fr);
@@ -34,8 +34,12 @@ user-select: none;
   display: none; transition-delay: 0.8s;
 }
 .card:hover .cardHover{
-  display: block; transition-duration: 2s; box-shadow: 1px 1px 5px 1px #b0afaf;
+  display: block; box-shadow: 1px 1px 5px 1px #b0afaf;
 }
+.card:hover .imgHover{
+left: 10px;
+}
+
 #iconItem{
   color: gray;
 }
@@ -48,7 +52,12 @@ user-select: none;
 .hide{
   display: none;
 }
-
+.hideArrow{
+  visibility: hidden;
+}
+.card:hover .hideArrow{
+  visibility: visible;
+}
 
 
 

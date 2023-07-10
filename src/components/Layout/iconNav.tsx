@@ -45,23 +45,6 @@ useEffect(() => {
     });
   });
 
-  // const scrollLeftButton = document.getElementById('scrollLeftButton')
-  // const scrollRightButton = document.getElementById('scrollRightButton')
-  // const itemList = document.querySelector('#itemList')
-
-  // scrollRightButton?.addEventListener("click", () => {
-  //   itemList?.scrollBy({
-  //     left: 200,
-  //     behavior: 'smooth' // Adjust the behavior as desired ('smooth' or 'auto')
-  //   });
-  // })
-  // scrollLeftButton?.addEventListener("click", () => {
-  //   itemList?.scrollBy({
-  //     left: -200,
-  //     behavior: 'smooth' // Adjust the behavior as desired ('smooth' or 'auto')
-  //   });
-  // })
-
   const scrollLeftButton = document.getElementById('scrollLeftButton');
   const scrollRightButton = document.getElementById('scrollRightButton');
   const itemList = document.querySelector('#itemList');
