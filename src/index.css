@@ -24,6 +24,49 @@ font-family: "Inter";
 -khtml-user-select: none;
 user-select: none;
 }
+.card:hover .userCard{
+  bottom: 1pc; transition-duration: 0.8s; transform-origin: left;
+}
+#products{
+    grid-template-columns: repeat(4, 1fr);
+  }
+.cardHover{
+  display: none; transition-delay: 0.8s;
+}
+.card:hover .cardHover{
+  display: block; transition-duration: 2s; box-shadow: 1px 1px 5px 1px #b0afaf;
+}
+#iconItem{
+  color: gray;
+}
+#iconItem:hover{
+  color: black;
+}
+#iconItem.selected {
+  color: black; border-bottom: 3px solid black;
+}
+.hide{
+  display: none;
+}
+
+
+
+
+@media(max-width: 1236px){
+  #products{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media(max-width: 950px){
+  #products{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media(max-width: 560px){
+  #products{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 @media(max-width: 768px){
  .footer{
