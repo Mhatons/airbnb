@@ -28,7 +28,7 @@ export default function MainFooter() {
         <li>{footerItems.choices}</li>
         <li className=' text-[#0066FF] text-3xl ps-2'>{footerItems.icon}</li>
       </ul>
-      <ul className='flex gap-4items-center font-semibold whitespace-nowrap '>
+      <ul className='flex gap-4 items-center font-semibold whitespace-nowrap '>
         <li className='text-lg'>{footerItems.iconGlobe}</li>
         <li>{footerItems.language}</li>
         <li>{footerItems.currency}</li>

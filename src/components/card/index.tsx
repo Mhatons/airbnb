@@ -4,7 +4,7 @@ import { PiHeartDuotone, PiHeartFill } from "react-icons/pi"
 import { useAppSelector } from '../../app/hooks'
 import { allInfo } from '../../features/actionslice'
 import MySlider from '../slider'
-import userImg from "../../asset/user (2).jpg"
+import userImg1 from "../../asset/userImg1 (1).jpg"
 
 interface Items {
  image: Array<any>,
@@ -14,6 +14,7 @@ interface Items {
  price: number,
  rate: number,
  id: any,
+ userImg: any
 }
 
 export default function Card({
@@ -24,6 +25,7 @@ export default function Card({
  price,
  rate,
  id,
+ userImg,
 }: Items) {
 
  const { toggleShow } = useAppSelector(allInfo);
@@ -53,13 +55,14 @@ export default function Card({
     />
     
     <div className=''>
-     <div className='w-[20%] absolute left-3 bottom-3 ps-1 bg-zinc-200 rounded-r-md'>
+     <div className='userCard w-[20%] absolute left-3 bottom-3 ps-1 bg-zinc-200 rounded-r-md'>
       <div className=' userImg bg-zinc-200 py-3 px-2 rounded-r-md border-l border-2 border-zinc-300'>
-       <img src={userImg} className='rounded-full' alt="" />
+       <img src={userImg1} className='rounded-full h-[40px] w-full object-cover opacity-0' alt="" />
       </div>
       <div className=' cardHover bg-zinc-200 h-[74px] left-0 -top-1 py-4 px-2 border-l shadow-md border-2 rounded-r-md w-[59px]  bottom-0 absolute'>
-       <img src={userImg} className='rounded-full' alt="" />
+       <img src={userImg1} className='rounded-full h-[40px] opacity-0' alt="" />
       </div>
+      <img src={userImg} className=' imgHover rounded-full h-[40px] w-[40px] left-3 absolute top-3 object-cover' alt="" />
      </div>
     </div>
 
