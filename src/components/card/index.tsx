@@ -55,8 +55,8 @@ export default function Card({
     />
     
     <div className=''>
-     <div className='userCard w-[20%] absolute left-3 bottom-3 ps-1 bg-zinc-200 rounded-r-md'>
-      <div className=' userImg bg-zinc-200 py-3 px-2 rounded-r-md border-l border-2 border-zinc-300'>
+         <div className='userCard w-[59px]  absolute left-3 bottom-3 ps-1 bg-zinc-200 rounded-r-md'>
+           <div className=' userImg bg-zinc-200 w-[60px]  py-3 px-2 rounded-r-md border-l border-2 border-zinc-300'>
        <img src={userImg1} className='rounded-full h-[40px] w-full object-cover opacity-0' alt="" />
       </div>
       <div className=' cardHover bg-zinc-200 h-[74px] left-0 -top-1 py-4 px-2 border-l shadow-md border-2 rounded-r-md w-[59px]  bottom-0 absolute'>
