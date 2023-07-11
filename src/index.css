@@ -70,6 +70,9 @@ left: 10px;
   #products{
     grid-template-columns: repeat(2, 1fr);
   }
+  /* .userCard{
+    width: 16%;
+  } */
 }
 @media(max-width: 560px){
   #products{
