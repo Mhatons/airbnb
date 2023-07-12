@@ -77,7 +77,7 @@ export default function Card({
     </div>
     <div className="text-sm font-normal text-gray-500">
      {
-      !toggleShow ? `Viewed ${views} times last week` : `3,593 kilometere away`
+           !toggleShow ? `Viewed ${views} times last week` : ` ${views} kilometere away`
      }
     </div>
     <div className="mb-2 text-sm font-normal text-gray-500">{toggleShow ? "5 nights ." : null}{date}</div>
