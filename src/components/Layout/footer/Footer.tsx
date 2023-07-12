@@ -22,17 +22,17 @@ export default function MainFooter() {
     <div className='lg:w-[92%] w-[95%] m-auto flex justify-between p-2 text-sm items-center'>
       <ul className='flex gap-x-2 items-center flex-wrap '>
         <li>{footerItems.year}</li>
-        <li>{footerItems.terms}</li>
-        <li>{footerItems.site}</li>
-        <li>{footerItems.privacy}</li>
-        <li>{footerItems.choices}</li>
-        <li className=' text-[#0066FF] text-3xl ps-2'>{footerItems.icon}</li>
+        <li className='cursor-pointer hover:underline'>{footerItems.terms}</li>
+        <li className='cursor-pointer hover:underline'>{footerItems.site}</li>
+        <li className='cursor-pointer hover:underline'>{footerItems.privacy}</li>
+        <li className='cursor-pointer hover:underline'>{footerItems.choices}</li>
+        <li className=' text-[#0066FF] text-3xl ps-2 cursor-pointer'>{footerItems.icon}</li>
       </ul>
       <ul className='flex gap-4 items-center font-semibold whitespace-nowrap '>
-        <li className='text-lg'>{footerItems.iconGlobe}</li>
-        <li>{footerItems.language}</li>
-        <li>{footerItems.currency}</li>
-        <li className='flex items-center gap-1'>
+        <li className='text-lg cursor-pointer'>{footerItems.iconGlobe}</li>
+        <li className='cursor-pointer hover:underline'>{footerItems.language}</li>
+        <li className='cursor-pointer hover:underline'>{footerItems.currency}</li>
+        <li className='flex items-center gap-1 cursor-pointer hover:underline'>
           {footerItems.support}
           <span className='text-lg'>{footerItems.iconArrow}</span>
         </li>
